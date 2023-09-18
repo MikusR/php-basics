@@ -12,6 +12,10 @@ var_dump($person->name);
 var_dump($person->surname);
 var_dump($person->age);
 
-foreach ($person as $val) {
-    echo $val . PHP_EOL;
-}
+//echo ($person->name) . PHP_EOL;
+//echo ($person->surname) . PHP_EOL;
+//echo ($person->age) . PHP_EOL;
+
+//foreach ($person as $val) {
+//    echo $val . PHP_EOL;
+//}

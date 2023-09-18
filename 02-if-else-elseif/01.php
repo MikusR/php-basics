@@ -6,5 +6,7 @@ $string = '10';
 
 
 if ($int === $string) {
-    echo 'yes';
+    echo 'They are the same';
+} else {
+    echo 'They are not the same';
 }
