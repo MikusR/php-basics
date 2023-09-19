@@ -16,16 +16,20 @@ for ($i = 1; $i <= 110; $i++) {
     if ($counter > 0) {
         $num = ' ';
     } else $num = '';
+    $resultIsANumber = true;
     if ($i % 3 === 0) {
         $num .= 'Coza';
+        $resultIsANumber = false;
     }
     if ($i % 5 === 0) {
         $num .= 'Loza';
+        $resultIsANumber = false;
     }
     if ($i % 7 === 0) {
         $num .= 'Woza';
+        $resultIsANumber = false;
     }
-    if (!($i % 3 === 0) && !($i % 5 === 0) && !($i % 7 === 0)) {
+    if ($resultIsANumber) {
         $num .= $i;
     }
     if ($counter < 10) {
