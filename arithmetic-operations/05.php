@@ -15,9 +15,10 @@ I'm thinking of a number between 1-100.  Try to guess it.
 > 42
 
 You guessed it!  What are the odds?!?*/
-
-$randomNumber = mt_rand(1, 100);
-$userInput = (int)readline('I\'m thinking of a number between 1-100.  Try to guess it. ');
+$minNumber = 1;
+$maxNumber = 100;
+$randomNumber = mt_rand($minNumber, $maxNumber);
+$userInput = (int)readline("I\'m thinking of a number between $minNumber-$maxNumber.  Try to guess it. ");
 switch ($userInput) {
     case ($userInput === $randomNumber):
         echo "You guessed it!  What are the odds?!?";
