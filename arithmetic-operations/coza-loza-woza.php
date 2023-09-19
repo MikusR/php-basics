@@ -8,12 +8,13 @@ The output shall look like:
 1 2 Coza 4 Loza Coza Woza 8 Coza Loza 11
 Coza 13 Woza CozaLoza 16 17 Coza 19 Loza CozaWoza 22
 23 Coza Loza 26 Coza Woza 29 CozaLoza 31 32 Coza*/
-$line = '';
-$counter = 0;
-for ($i = 1; $i <= 110; $i++) {
+$result = '';
+$counter = 1;
+$maxNumber = 110;
+$groupBy = 11;
 
-
-    if ($counter > 0) {
+for ($i = 1; $i <= $maxNumber; $i++) {
+    if ($counter > 1) {
         $num = ' ';
     } else $num = '';
     $resultIsANumber = true;
@@ -32,14 +33,12 @@ for ($i = 1; $i <= 110; $i++) {
     if ($resultIsANumber) {
         $num .= $i;
     }
-    if ($counter < 10) {
+    if ($counter < $groupBy) {
         $counter++;
-        $line .= $num;
+        $result .= $num;
     } else {
-        $counter = 0;
-        $line .= $num . PHP_EOL;
+        $counter = 1;
+        $result .= $num . PHP_EOL;
     }
-
-
 }
-echo $line;
+echo $result;
