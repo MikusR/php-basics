@@ -40,7 +40,7 @@ function checkIfCanBuyGun(object $customer, array $listOfGuns): array
             if (($gun->license === $license) && ($customer->cash >= $gun->price)) {
                 $affordableGuns[] = $gun;
 
-            };
+            }
         }
     }
     return $affordableGuns;
