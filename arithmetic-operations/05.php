@@ -22,10 +22,10 @@ switch ($userInput) {
     case ($userInput === $randomNumber):
         echo "You guessed it!  What are the odds?!?";
         break;
-    case ($userInput <= $randomNumber):
+    case ($userInput < $randomNumber):
         echo "Sorry, you are too low.  I was thinking of $randomNumber";
         break;
-    case ($userInput >= $randomNumber):
+    case ($userInput > $randomNumber):
         echo "Sorry, you are too high.  I was thinking of $randomNumber";
         break;
 }
