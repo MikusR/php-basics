@@ -51,7 +51,7 @@ function formatOutput(array $affordableGuns): string
 {
     $returnString = '';
     foreach ($affordableGuns as $affordableGun) {
-        $returnString .= "Can buy Class $affordableGun->license gun $affordableGun->name for $affordableGun->price" . PHP_EOL;
+        $returnString .= "Can buy Class $affordableGun->license gun $affordableGun->name for $affordableGun->price \n";
     }
     if ($returnString === '') return 'Can\'t buy anything';
     return $returnString;
