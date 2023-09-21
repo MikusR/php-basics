@@ -10,9 +10,15 @@
 //Your program must accept metric units.
 
 
-function calculateBMI(float $weightInKg, float $heightInM): float
+function calculateBMI(float $weight, float $height, string $method = 'metric'): ?float
 {
-    return round(($weightInKg / (($heightInM) ** 2)), 1);
+    if ($method === 'metric') {
+        return round(($weight / (($height) ** 2)), 1);
+    }
+    if ($method === 'imperial') {
+        return round((($weight * 703) / (($height) ** 2)), 1);
+    }
+    return null;
 }
 
 function shameUser(float $bmi): string
@@ -29,5 +35,9 @@ function shameUser(float $bmi): string
     }
 }
 
-$bmi = calculateBMI(readline("Weight in kg: "), readline("Height in m: "));
+
+$method = readline('metric/imperial ');
+$weight = ($method === 'metric') ? readline("Weight in kg: ") : readline("Weight in lb: ");
+$height = ($method === 'metric') ? readline("Height in m: ") : readline("Height in in: ");
+$bmi = calculateBMI($weight, $height, $method);
 echo 'Your BMI is ' . $bmi . ' and you are ' . shameUser($bmi);
