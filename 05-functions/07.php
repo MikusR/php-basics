@@ -5,10 +5,12 @@
 // Each gun has license letter, price & name.
 // Using PHP in-built functions determine if the requester (person) can buy a gun from the store.
 
+//pārtaisīt lai atgriež masīvu ar elementiem un ja nevar tad tukšu masīvu
+
 $person = new stdClass();
 $person->name = 'Nota Fakename';
 $person->licenses = ['Y', 'A'];
-$person->cash = 453;
+$person->cash = 400053;
 
 function createANewGun(string $name, string $license, int $price): stdClass
 {
@@ -29,19 +31,31 @@ $guns = [
 ];
 
 
-function checkIfCanBuyGun(object $customer, array $listOfGuns): string
+function checkIfCanBuyGun(object $customer, array $listOfGuns): array
 {
-    $returnString = '';
+    $affordableGuns = [];
+
     foreach ($customer->licenses as $license) {
         foreach ($listOfGuns as $gun) {
             if (($gun->license === $license) && ($customer->cash >= $gun->price)) {
-                $returnString .= "Can buy Class $license gun $gun->name for $gun->price" . PHP_EOL;
-            };
+                $affordableGuns[] = $gun;
+
+            }
         }
+    }
+    return $affordableGuns;
+
+}
+
+function formatOutput(array $affordableGuns): string
+{
+    $returnString = '';
+    foreach ($affordableGuns as $affordableGun) {
+        $returnString .= "Can buy Class $affordableGun->license gun $affordableGun->name for $affordableGun->price \n";
     }
     if ($returnString === '') return 'Can\'t buy anything';
     return $returnString;
 }
 
-echo checkIfCanBuyGun($person, $guns);
+echo formatOutput(checkIfCanBuyGun($person, $guns));
 
