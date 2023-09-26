@@ -69,18 +69,20 @@ $combinations = [
     ],
 ];
 
-$board = [
-];
-function fillBoard(array &$board, array $elements, int $maxRows, int $maxColumns)
+
+function fillBoard(array $elements, int $maxRows, int $maxColumns): array
+
 {
+    $board = [];
     for ($row = 0; $row < $maxRows; $row++) {
         for ($column = 0; $column < $maxColumns; $column++) {
             $board[$row][$column] = $elements[array_rand($elements)];
         }
     }
+    return $board;
 }
 
-function displayBoard(array $board)
+function displayBoard(array $board): void
 {
     foreach ($board as $row) {
         foreach ($row as $column => $element) {
@@ -99,8 +101,8 @@ $spin = true;
 while ($spin) {
     $winnings = 0;
     $playerCash -= $costPerSpin;
-    fillBoard($board, $elements, $maxRows, $maxColumns);
-    //fillBoard($board, ['F'], $maxRows, $maxColumns);
+    $board = fillBoard($elements, $maxRows, $maxColumns);
+    $board = fillBoard(['A', 'F'], $maxRows, $maxColumns);
     displayBoard($board);
     $test = [];
     $boardCombinations = [];
