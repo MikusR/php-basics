@@ -40,8 +40,7 @@ function checkState(array $board, string $player): ?string
         $line = [];
         foreach ($combination as $cell) {
 
-            //
-            //$board[
+
             $line[] = $board[$cell[0]][$cell[1]];
 
         }
