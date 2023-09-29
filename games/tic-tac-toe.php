@@ -58,9 +58,14 @@ function checkState(array $board, string $player): ?string
 }
 
 
-function getTurn($player): array
+function getTurn(array $board, string $player): array
 {
-    return explode(' ', readline("'$player' choose your location (row, column) "));
+    $validTurn = false;
+    while ($validTurn === false) {
+        $result = explode(' ', readline("'$player' choose your location (row, column) "));
+        if ($board[$result[0]][$result[1]] === '-') $validTurn = true;
+    }
+    return $result;
 }
 
 $currentState = null;
@@ -69,7 +74,7 @@ display_board($board);
 while ($currentState === null) {
 
 
-    $turn = getTurn($currentPlayer);
+    $turn = getTurn($board, $currentPlayer);
     $board[$turn[0]][$turn[1]] = $currentPlayer;
     display_board($board);
     $state = checkState($board, $currentPlayer);
