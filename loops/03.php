@@ -6,9 +6,7 @@
 //turtle
 //Enter second word
 //153
-//turtle....
-//..........
-//......153
+//turtle....................153
 //turtle.....................153
 //This could be used as part of an index for a book. To print out the dots, use echo "." inside a loop body.
 //
