@@ -16,9 +16,8 @@ $firstWord = readline("Enter first word: ");
 $secondWord = readline("Enter second word: ");
 $numberOfDots = $lineLenght - (strlen($firstWord) + strlen($secondWord));
 
-$outputString = $firstWord;
+echo $firstWord;
 for ($i = 0; $i < $numberOfDots; $i++) {
-    $outputString .= '.';
+    echo '.';
 }
-$outputString .= $secondWord;
-echo $outputString;
+echo $secondWord;
