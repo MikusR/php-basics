@@ -40,4 +40,4 @@ function drawAsciiFigure(int $size): void
     }
 }
 
-drawAsciiFigure(2);
+drawAsciiFigure(7);
