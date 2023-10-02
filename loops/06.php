@@ -6,6 +6,11 @@
 // ////////****************\\\\\\\\
 // ////************************\\\\
 // ********************************
+// ////////////////\\\\\\\\\\\\\\\\
+// ////////////********\\\\\\\\\\\\
+// ////////****************\\\\\\\\
+// ////************************\\\\
+// ********************************
 //Then, modify your program using an integer class constant so that it can create a similar figure of any size.
 // For instance, the diagram above has a size of 5. For example, the figure below has a size of 3:
 //
@@ -25,15 +30,15 @@
 
 function drawAsciiFigure(int $size): void
 {
-    for ($rinda = 0; $rinda < $size; $rinda++) {
+    for ($rinda = 1; $rinda <= $size; $rinda++) {
 
-        for ($slash = $size - $rinda - 1; $slash > 0; $slash--) {
+        for ($slash = $size - $rinda; $slash > 0; $slash--) {
             echo "////";
         }
-        for ($star = 0; $star < $rinda; $star++) {
+        for ($star = 0; $star < $rinda - 1; $star++) {
             echo "********";
         }
-        for ($backSlash = $size - $rinda - 1; $backSlash > 0; $backSlash--) {
+        for ($backSlash = $size - $rinda; $backSlash > 0; $backSlash--) {
             echo '\\\\\\\\';
         }
         echo PHP_EOL;
