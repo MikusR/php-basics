@@ -69,4 +69,5 @@ foreach ($products->getInventory() as $product) {
     echo $product->printProduct() . PHP_EOL;
 }
 $products->getInventory()[0]->setPrice(99);
+$products->getInventory()[1]->setAmount(999);
 echo $products->printInventory();
