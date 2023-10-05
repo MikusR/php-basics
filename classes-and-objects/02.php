@@ -11,11 +11,24 @@ class Point
         $this->y = $pointb;
     }
 
-    public function swapPoints(Point &$pointa, Point &$pointb): void
+    public function swapPoints2(Point &$pointa, Point &$pointb): void
     {
         $tempPoint = $pointa;
         $pointa = $pointb;
         $pointb = $tempPoint;
+    }
+
+    public function swapPoints(Point $pointa, Point $pointb): void
+    {
+        $tempPoint = new Point(1, 1);
+        $tempPoint->x = $pointa->x;
+        $tempPoint->y = $pointa->y;
+
+        $pointa->x = $pointb->x;
+        $pointa->y = $pointb->y;
+
+        $pointb->x = $tempPoint->x;
+        $pointb->y = $tempPoint->y;
     }
 }
 
