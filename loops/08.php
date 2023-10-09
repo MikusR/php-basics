@@ -27,3 +27,7 @@ for ($rinda = 0; $rinda <= $max - $min; $rinda++) {
     }
     echo PHP_EOL;
 }
+//$value=$kolona+rinda
+//if value>max
+//value-(max-min)-1
+//value
