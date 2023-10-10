@@ -186,7 +186,7 @@ class Video
 {
     private string $title;
     private string $status = 'inStock';
-    public array $userRating = [];
+    private array $userRating = [];
 
     public function __construct(string $title)
     {
